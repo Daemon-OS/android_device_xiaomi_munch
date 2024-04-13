@@ -97,6 +97,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-service
 
 # Camera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/miuicamera.mk)
+
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
@@ -137,7 +139,9 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.sf.color_mode=0 \
-    vendor.display.use_smooth_motion=0
+    vendor.display.use_smooth_motion=0 \
+    ro.product.mod_device=munch
+
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.enable_hwc_vds=1 \
